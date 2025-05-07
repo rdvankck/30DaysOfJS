@@ -1,5 +1,7 @@
 # Day 5: Flex Panel Gallery
 
+> **Note:** The original images have been updated with new ones to enhance the visual appeal and demonstrate the flexibility of the gallery system.
+
 This is the fifth project of my 30 Days of JavaScript challenge, based on Wes Bos's [JavaScript30](https://javascript30.com/) course.
 
 ## What I've Built
