@@ -11,6 +11,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 3 | [CSS Variables with JS](./Day3-CSS%20Variables) | Image editor with adjustable properties using CSS variables |
 | 4 | [Array Cardio Day 1](./Day4%20-%20Array%20Cardio%201) | A simple project to practice array methods in JavaScript |
 | 5 | [Flex Panel Gallery](./Day5-Flex%20Panel%20Gallery) | Interactive image panels that expand with animations using Flexbox |
+| 6 | [Type Ahead](.Day6-Type%20Ahead) | Search feature that shows real-time suggestions as you type |
 
 ## Goals
 
