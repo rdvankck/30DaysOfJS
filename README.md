@@ -9,9 +9,11 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 1 | [JavaScript Drum Kit](./Day1-Drum%20Kit) | A virtual drum kit that plays sounds when you press keys |
 | 2 | [JS and CSS Clock](./Day2-JSClock) | An analog clock built with CSS and JavaScript |
 | 3 | [CSS Variables with JS](./Day3-CSS%20Variables) | Image editor with adjustable properties using CSS variables |
-| 4 | [Array Cardio Day 1](./Day4%20-%20Array%20Cardio%201) | A simple project to practice array methods in JavaScript |
+| 4 | [Array Cardio Day 1](./Day4-Array%20Cardio%201) | A simple project to practice array methods in JavaScript |
 | 5 | [Flex Panel Gallery](./Day5-Flex%20Panel%20Gallery) | Interactive image panels that expand with animations using Flexbox |
-| 6 | [Type Ahead](.Day6-Type%20Ahead) | Search feature that shows real-time suggestions as you type |
+| 6 | [Type Ahead](./Day6-Type%20Ahead) | Search feature that shows real-time suggestions as you type |
+| 7 | [Array Cardio Day 2](./Day7-Array%20Cardio%202) | Advanced array methods practice with real-world examples |
+| 8 | [Fun with HTML5 Canvas](./Day8-Fun%20with%20HTML5%20Canvas) | Interactive drawing application with dynamic colors and line thickness |
 
 ## Goals
 
