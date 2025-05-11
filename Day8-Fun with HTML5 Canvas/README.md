@@ -14,6 +14,81 @@ In this project, I built an interactive drawing application using HTML5 Canvas. 
 - Smooth, rounded line caps and joins for a polished look
 - Mouse event handling for a responsive drawing experience
 
+## Key Code Examples
+
+### Canvas Setup
+```javascript
+const canvas = document.querySelector('#draw');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+```
+This initializes the canvas and sets its dimensions to fill the entire window.
+
+### Line Styling
+```javascript
+ctx.strokeStyle = '#BADA55';  // Initial color
+ctx.lineJoin = 'round';       // Rounded corners
+ctx.lineCap = 'round';        // Rounded line ends
+ctx.lineWidth = 100;          // Initial line thickness
+```
+These properties control the appearance of the lines we draw.
+
+### Drawing Function
+```javascript
+function draw(e) {
+  if (!isDrawing) return;
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+  
+  // Update color and line width
+  hue++;
+  if (hue >= 360) hue = 0;
+  
+  if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+    direction = !direction;
+  }
+  
+  if(direction) {
+    ctx.lineWidth++;
+  } else {
+    ctx.lineWidth--;
+  }
+}
+```
+This function draws a line segment from the last position to the current mouse position, updates the color (hue), and adjusts the line width.
+
+### Event Listeners
+```javascript
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false);
+```
+These event listeners track mouse movements and trigger drawing when appropriate.
+
+### CSS for Full-screen Canvas
+```css
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+```
+This CSS ensures the canvas fills the entire viewport for maximum drawing space.
+
 ## Technologies Used
 
 - HTML5
