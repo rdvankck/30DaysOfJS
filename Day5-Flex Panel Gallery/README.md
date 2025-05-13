@@ -18,48 +18,6 @@ In this project, I built an interactive image gallery with expanding panels usin
 
 ## Key Code Examples
 
-### Flexbox Container Setup
-```css
-.panels {
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-}
-```
-
-1. `min-height: 100vh`: Makes the container fill the entire viewport height.
-2. `overflow: hidden`: Prevents content from spilling outside the container.
-3. `display: flex`: Establishes a flex container, allowing panels to align in a row.
-
-### Panel Styling and Transitions
-```css
-.panel {
-  background: #6B0F9C;
-  box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
-  color: white;
-  text-align: center;
-  align-items: center;
-  transition:
-    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    background 0.2s;
-  font-size: 20px;
-  background-size: cover;
-  background-position: center;
-  flex: 1;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-```
-
-1. `flex: 1`: Makes each panel take equal space initially.
-2. `display: flex` with `flex-direction: column`: Creates a nested flex container for vertically aligned items.
-3. `transition`: Defines smooth animations for multiple properties:
-   - Custom cubic-bezier timing function creates a bounce-like effect
-   - Transitions applied to font-size, flex, and background properties
-4. `background-size: cover`: Ensures background images fill the panel area.
-
 ### Panel Item Transformations
 ```css
 .panel > * {
