@@ -4,55 +4,147 @@
 
 This is the fifth project of my 30 Days of JavaScript challenge, based on Wes Bos's [JavaScript30](https://javascript30.com/) course.
 
-## Project Files
+## Project Overview
 
-### index.html
-The original version of the Flex Panel Gallery where:
-- Multiple panels can be open simultaneously
-- Clicking a panel toggles its state (open/close)
-- Other panels remain unaffected when a panel is clicked
-- Each panel operates independently
+In this project, I built an interactive image gallery with expanding panels using CSS Flexbox and JavaScript. The panels expand when clicked and display additional text with smooth animations.
 
-### index2.html
-A modified version with enhanced user experience:
-- Only one panel can be open at a time
-- Clicking a panel automatically closes all other panels
-- Provides a more focused viewing experience
-- Prevents visual clutter from multiple open panels
+## Key Features
 
-#### Key Differences in index2.html:
-1. **Single Active Panel Logic**:
-   ```javascript
-   function toggleOpen() {
-     // Close all panels first
-     panels.forEach(panel => {
-       panel.classList.remove('open');
-       panel.classList.remove('open-active');
-     });
-     
-     // Then open only the clicked panel
-     this.classList.add('open');
-   }
-   ```
+- Interactive panels that expand when clicked
+- Smooth animations for panel expansion and text transitions
+- Responsive design that works on different screen sizes
+- Text elements that slide in from top and bottom
+- Beautiful background images with overlay effects
 
-2. **User Experience Improvements**:
-   - Cleaner visual presentation
-   - Better focus on selected content
-   - More intuitive interaction model
-   - Reduced visual complexity
+## Key Code Examples
 
-3. **Technical Implementation**:
-   - Modified event handling
-   - Added panel state management
-   - Improved transition handling
-   - Enhanced state synchronization
+### Flexbox Container Setup
+```css
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+```
 
-## Features
-- Smooth transitions and animations
-- Responsive design
-- Interactive panel system
-- Beautiful background images
-- Dynamic text animations
+1. `min-height: 100vh`: Makes the container fill the entire viewport height.
+2. `overflow: hidden`: Prevents content from spilling outside the container.
+3. `display: flex`: Establishes a flex container, allowing panels to align in a row.
+
+### Panel Styling and Transitions
+```css
+.panel {
+  background: #6B0F9C;
+  box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+  color: white;
+  text-align: center;
+  align-items: center;
+  transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+```
+
+1. `flex: 1`: Makes each panel take equal space initially.
+2. `display: flex` with `flex-direction: column`: Creates a nested flex container for vertically aligned items.
+3. `transition`: Defines smooth animations for multiple properties:
+   - Custom cubic-bezier timing function creates a bounce-like effect
+   - Transitions applied to font-size, flex, and background properties
+4. `background-size: cover`: Ensures background images fill the panel area.
+
+### Panel Item Transformations
+```css
+.panel > * {
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel > *:first-child { transform: translateY(-100%); }
+.panel.open-active > *:first-child { transform: translateY(0); }
+.panel > *:last-child { transform: translateY(100%); }
+.panel.open-active > *:last-child { transform: translateY(0); }
+```
+
+1. `.panel > *`: Targets all direct children of the panel (the text elements).
+2. `flex: 1 0 auto`: Makes each text element take equal vertical space.
+3. `transform: translateY(-100%)` and `translateY(100%)`: Positions the first and last text elements off-screen.
+4. `.panel.open-active > *`: When panel has both classes, transforms reset to 0, sliding text into view.
+5. `transition: transform 0.5s`: Creates smooth animation for the sliding text.
+
+### Panel Expansion Styling
+```css
+.panel.open {
+  flex: 5;
+  font-size: 40px;
+}
+```
+
+1. `flex: 5`: Makes the opened panel five times larger than non-opened panels.
+2. `font-size: 40px`: Increases text size for better readability when panel is open.
+
+### JavaScript Click Handler
+```javascript
+function toggleOpen() {
+  this.classList.toggle('open');
+}
+
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+```
+
+1. `querySelectorAll('.panel')`: Selects all panel elements.
+2. `forEach`: Loops through each panel to attach an event listener.
+3. `addEventListener('click', toggleOpen)`: Executes toggleOpen function when a panel is clicked.
+4. `classList.toggle('open')`: Adds the 'open' class if not present, removes it if present.
+
+### Transition End Handler
+```javascript
+function toggleActive(e) {
+  if (e.propertyName.includes('flex')) {
+    this.classList.toggle('open-active');
+  }
+}
+
+panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+```
+
+1. `addEventListener('transitionend', toggleActive)`: Executes when a CSS transition completes.
+2. `e.propertyName.includes('flex')`: Checks if the completed transition was the flex property.
+3. `classList.toggle('open-active')`: Adds/removes the 'open-active' class to trigger text animations.
+4. This creates a sequence where panel expands first, then text slides in after expansion completes.
+
+## Modified Version (index2.html)
+
+### Single Panel Toggle Logic
+```javascript
+function toggleOpen() {
+  // Close all panels first
+  panels.forEach(panel => {
+    panel.classList.remove('open');
+    panel.classList.remove('open-active');
+  });
+  
+  // Then open only the clicked panel
+  this.classList.add('open');
+}
+```
+
+1. `panels.forEach`: Iterates through all panels.
+2. `classList.remove`: Removes both 'open' and 'open-active' classes from all panels.
+3. `this.classList.add('open')`: Adds 'open' class only to the clicked panel.
+4. This ensures only one panel can be open at a time, creating a more focused experience.
 
 ## Technologies Used
 - HTML5
@@ -60,11 +152,21 @@ A modified version with enhanced user experience:
 - Vanilla JavaScript
 - Google Fonts
 
+## What I Learned
+- How to use CSS Flexbox for layout
+- Creating nested flex containers (parent and children)
+- Using CSS transitions with custom timing functions
+- Implementing CSS transforms for element positioning
+- Handling transitionend events in JavaScript
+- Managing element states with classList methods
+- Creating sequential animations with JavaScript and CSS
+
 ## How to Use
 1. Open either `index.html` or `index2.html` in your browser
-2. Click on any panel to interact with it
-3. Experience the different behaviors:
-   - `index.html`: Multiple panels can be open
+2. Click on any panel to make it expand
+3. Notice how the text slides in from top and bottom
+4. Experience the different behaviors:
+   - `index.html`: Multiple panels can be open simultaneously
    - `index2.html`: Only one panel can be open at a time
 
 ## Credits
