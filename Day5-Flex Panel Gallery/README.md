@@ -42,17 +42,6 @@ In this project, I built an interactive image gallery with expanding panels usin
 4. `.panel.open-active > *`: When panel has both classes, transforms reset to 0, sliding text into view.
 5. `transition: transform 0.5s`: Creates smooth animation for the sliding text.
 
-### Panel Expansion Styling
-```css
-.panel.open {
-  flex: 5;
-  font-size: 40px;
-}
-```
-
-1. `flex: 5`: Makes the opened panel five times larger than non-opened panels.
-2. `font-size: 40px`: Increases text size for better readability when panel is open.
-
 ### JavaScript Click Handler
 ```javascript
 function toggleOpen() {
