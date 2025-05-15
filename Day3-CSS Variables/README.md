@@ -31,24 +31,6 @@ In this project, I built an interactive image editor that allows users to adjust
 4. `--blur`: Custom property for the blur filter amount.
 5. CSS variables can be updated by JavaScript, unlike traditional CSS values.
 
-### CSS Variables Usage
-```css
-img {
-  padding: var(--spacing);
-  background: var(--base);
-  filter: blur(var(--blur));
-}
-
-.hl {
-  color: var(--base);
-}
-```
-
-1. `var(--spacing)`: References the spacing CSS variable for image padding.
-2. `var(--base)`: Uses the base color variable for both the image background and highlighted text.
-3. `filter: blur()`: Applies a blur effect using the blur variable value.
-4. Variables are reused in multiple places, creating consistent styling.
-
 ### JavaScript Input Selection
 ```javascript
 const inputs = document.querySelectorAll('.controls input');
