@@ -1,6 +1,6 @@
 # Day 3: CSS Variables with JS
 
-This is the third project of my 30 Days of JavaScript challenge, based on Wes Bos's [JavaScript30](https://javascript30.com/) course.
+This is the third project of my 30 Days of JavaScript challenge, based on **Wes Bos's** [JavaScript30](https://javascript30.com/) course.
 
 ## Project Overview
 
