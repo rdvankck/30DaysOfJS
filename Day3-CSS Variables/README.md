@@ -16,21 +16,6 @@ In this project, I built an interactive image editor that allows users to adjust
 
 ## Key Code Examples
 
-### CSS Variables Definition
-```css
-:root {
-  --base: #ffc600;
-  --spacing: 10px;
-  --blur: 10px;
-}
-```
-
-1. `:root`: Targets the highest-level parent (equivalent to html selector).
-2. `--base`: Custom property for the highlight color.
-3. `--spacing`: Custom property for image padding.
-4. `--blur`: Custom property for the blur filter amount.
-5. CSS variables can be updated by JavaScript, unlike traditional CSS values.
-
 ### JavaScript Input Selection
 ```javascript
 const inputs = document.querySelectorAll('.controls input');
