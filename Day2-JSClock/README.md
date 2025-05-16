@@ -13,17 +13,6 @@ An analog clock that displays the current time using CSS transforms and JavaScri
 - CSS transforms are used to rotate the clock hands
 - The clock updates every second
 
-## Custom Styling Enhancements
-
-I've customized the clock hands with the following improvements:
-
-- **Second Hand**: Longest (50%), thinnest (3px), bright red color for better visibility
-- **Minute Hand**: Medium length (40%), medium thickness (6px), dark gray color
-- **Hour Hand**: Shortest (30%), thickest (8px), darkest gray color
-- Added rounded corners (border-radius) to each hand for a more polished look
-
-These style enhancements make it easier to distinguish between the hands and give the clock a more realistic appearance.
-
 ## Technologies Used
 
 - HTML5
