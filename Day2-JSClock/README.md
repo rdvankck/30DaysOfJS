@@ -19,14 +19,6 @@ An analog clock that displays the current time using CSS transforms and JavaScri
 - CSS3
 - Vanilla JavaScript (ES6)
 
-## Features
-
-- Real-time clock updates
-- Smooth transitions using CSS cubic-bezier
-- Transform-origin to rotate hands from the right position
-- CSS styling to create a realistic looking clock
-- Custom-styled clock hands with different lengths and colors
-
 ## Key Concepts Learned
 
 - CSS transforms and transitions
