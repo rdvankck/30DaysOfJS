@@ -38,21 +38,21 @@ function setDate() {
 setInterval(setDate, 1000);
 ```
 
-1. **setDate() Fonksiyonu**: Saatin ana fonksiyonu, her saniye çağrılarak zamanı günceller.
-2. **Date Nesnesi**: JavaScript'in yerleşik Date nesnesi ile mevcut zaman alınır.
-3. **Saniye İbresi Rotasyonu**: 
-   - `now.getSeconds()` ile mevcut saniye alınır
-   - `((seconds / 60) * 360)` formülü ile saniyenin açı değeri hesaplanır (60 saniye = 360 derece)
-   - +90 eklenir çünkü CSS'de saat 12 pozisyonu 90 derece rotasyona karşılık gelir
-4. **Dakika İbresi Rotasyonu**:
-   - `now.getMinutes()` ile mevcut dakika alınır
-   - Ana formül `((mins / 60) * 360)` ile dakikanın açı değeri hesaplanır
-   - `((seconds / 60) * 6)` eklenerek saniyeye bağlı olarak daha hassas hareket sağlanır
-5. **Saat İbresi Rotasyonu**:
-   - `now.getHours()` ile mevcut saat alınır
-   - `((hour / 12) * 360)` ile saatin açı değeri hesaplanır (12 saat = 360 derece)
-   - `((mins / 60) * 30)` eklenerek dakikaya bağlı olarak daha hassas hareket sağlanır
-6. **setInterval**: Fonksiyonu her saniye (1000 ms) çağırarak saat ibresinin sürekli güncellenmesini sağlar
+1. **setDate() Function**: The main function of the clock, called every second to update the time.
+2. **Date Object**: JavaScript's built-in Date object is used to get the current time.
+3. **Seconds Hand Rotation**: 
+   - `now.getSeconds()` gets the current seconds
+   - `((seconds / 60) * 360)` formula calculates the angle value of seconds (60 seconds = 360 degrees)
+   - +90 is added because the 12 o'clock position corresponds to 90 degrees rotation in CSS
+4. **Minutes Hand Rotation**:
+   - `now.getMinutes()` gets the current minutes
+   - The main formula `((mins / 60) * 360)` calculates the angle value of minutes
+   - `((seconds / 60) * 6)` is added to provide more precise movement based on seconds
+5. **Hours Hand Rotation**:
+   - `now.getHours()` gets the current hour
+   - `((hour / 12) * 360)` calculates the angle value of hours (12 hours = 360 degrees)
+   - `((mins / 60) * 30)` is added to provide more precise movement based on minutes
+6. **setInterval**: Calls the function every second (1000 ms) to ensure continuous updating of the clock hands
 
 ## Technologies Used
 
