@@ -1,4 +1,4 @@
-# Day 2: JS and CSS Clock
+# Day 2: JS and CSS Clock 
 
 This is the second project of my 30 Days of JavaScript challenge, based on Wes Bos's [JavaScript30](https://javascript30.com/) course.
 
