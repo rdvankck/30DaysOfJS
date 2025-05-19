@@ -10,7 +10,7 @@ This project demonstrates several important JavaScript concepts:
 
 ### DOM Manipulation
 - `document.querySelector()`: Selects elements from the DOM
-- `element.classList.add()` and `element.classList.remove()`: Dynamically changes CSS classes
+- `element.classList.add()` and `element.classList.remove()`: Dynamically changes **CSS** classes
 - `document.querySelectorAll()`: Selects multiple elements at once
 
 ### Audio Manipulation
