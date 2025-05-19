@@ -1,6 +1,34 @@
 # Day 1: JavaScript Drum Kit
 
-This is the first project of my 30 Days of JavaScript challenge, based on Wes Bos's [JavaScript30](https://javascript30.com/) course.
+## JavaScript Concepts Explained
+
+This project demonstrates several important JavaScript concepts:
+
+### Event Listeners
+- `window.addEventListener('keydown', playSound)`: Listens for keyboard events
+- The event object contains information about which key was pressed
+
+### DOM Manipulation
+- `document.querySelector()`: Selects elements from the DOM
+- `element.classList.add()` and `element.classList.remove()`: Dynamically changes CSS classes
+- `document.querySelectorAll()`: Selects multiple elements at once
+
+### Audio Manipulation
+- `audio.currentTime = 0`: Resets audio playback position
+- `audio.play()`: Programmatically plays audio elements
+
+### Timing and Transitions
+- `setTimeout()`: Executes code after a specified delay
+- Works with CSS transitions to create visual effects
+
+### Data Attributes
+- Custom `data-*` attributes store information on HTML elements
+- Accessed via JavaScript using `element.getAttribute('data-key')` or `element.dataset.key`
+
+## How to Use
+1. Open the HTML file in your browser
+2. Press the keys shown on screen (A, S, D, F, G, H, J, K, L)
+3. Each key triggers a different drum sound with visual feedback
 
 ## What I've Built
 
