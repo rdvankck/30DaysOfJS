@@ -19,7 +19,7 @@ This project demonstrates several important JavaScript concepts:
 
 ### Timing and Transitions
 - `setTimeout()`: Executes code after a specified delay
-- Works with CSS transitions to create visual effects
+- Works with **CSS** transitions to create visual effects
 
 ### Data Attributes
 - Custom `data-*` attributes store information on HTML elements
