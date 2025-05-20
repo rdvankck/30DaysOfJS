@@ -1,4 +1,4 @@
-# Day 1: JavaScript Drum Kit
+# **Day 1: JavaScript Drum Kit**
 
 ## JavaScript Concepts Explained
 
