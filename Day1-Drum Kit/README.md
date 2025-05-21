@@ -1,4 +1,4 @@
-# Day 1: JavaScript Drum Kit
+# **Day 1: JavaScript Drum Kit**
 
 ## JavaScript Concepts Explained
 
@@ -10,7 +10,7 @@ This project demonstrates several important JavaScript concepts:
 
 ### DOM Manipulation
 - `document.querySelector()`: Selects elements from the DOM
-- `element.classList.add()` and `element.classList.remove()`: Dynamically changes CSS classes
+- `element.classList.add()` and `element.classList.remove()`: Dynamically changes **CSS** classes
 - `document.querySelectorAll()`: Selects multiple elements at once
 
 ### Audio Manipulation
@@ -19,7 +19,7 @@ This project demonstrates several important JavaScript concepts:
 
 ### Timing and Transitions
 - `setTimeout()`: Executes code after a specified delay
-- Works with CSS transitions to create visual effects
+- Works with **CSS** transitions to create visual effects
 
 ### Data Attributes
 - Custom `data-*` attributes store information on HTML elements
