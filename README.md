@@ -15,6 +15,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 7 | [Array Cardio Day 2](./Day7-Array%20Cardio%202) | Advanced array methods practice with real-world examples |
 | 8 | [Fun with HTML5 Canvas](./Day8-Fun%20with%20HTML5%20Canvas) | Interactive drawing application with dynamic colors and line thickness |
 | 9 | [Dev Tools Domination](./Day9-Dev%20Tools%20Domination) | This exercise shows JavaScript console methods and debugging techniques |
+| 10 | [x](.Day10%20-%20Hold%20Shift%20and%20Check%20Checkboxes) |  |
 
 ## Goals
 
