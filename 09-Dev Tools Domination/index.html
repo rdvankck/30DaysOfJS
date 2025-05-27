@@ -2,105 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hold Shift and Check Checkboxes</title>
+  <title>Console Tricks!</title>
   <link rel="icon" href="https://fav.farm/✅" />
-  <style>
-    html {
-      font-family: sans-serif;
-      background:#ffc600;
-    }
-    .inbox {
-      max-width:400px;
-      margin:50px auto;
-      background:white;
-      border-radius:5px;
-      box-shadow:10px 10px 0 rgba(0,0,0,0.1);
-    }
-    .item {
-      display:flex;
-      align-items:center;
-      border-bottom:1px solid #F1F1F1;
-    }
-    .item:last-child {
-      border-bottom:0;
-    }
-    input:checked + p {
-      background:#F9F9F9;
-      text-decoration: line-through;
-    }
-    input[type="checkbox"] {
-      margin:20px;
-    }
-    p {
-      margin:0;
-      padding:20px;
-      transition:background 0.2s;
-      flex:1;
-      font-family: 'helvetica neue';
-      font-size: 20px;
-      border-left: 1px solid #D1E2FF;
-    }
-  </style>
 </head>
 <body>
-  <div class="inbox">
-    <div class="item">
-      <input type="checkbox">
-      <p>This is an inbox layout.</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Check one item</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Hold down your Shift key</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Check a lower item</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Everything in between should also be set to checked</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Try to do it without any libraries</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Just regular JavaScript</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Good Luck!</p>
-    </div>
-    <div class="item">
-      <input type="checkbox">
-      <p>Ridvan Kocuk</p>
-    </div>
-  </div>
-  <script>
-    const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
-    let lastChecked;
 
-    function handleCheck(e) {
-      let inBetween = false;
-      if(e.shiftKey && this.checked) {
-        checkboxes.forEach(checkbox => {
-          if(checkbox === this || checkbox === lastChecked) {
-            inBetween = !inBetween;
-          }
-          if(inBetween) {
-            checkbox.checked = true;
-          }
-        });
-      }
-      lastChecked = this;
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
     }
 
-    checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+    // Regular
+    console.log('hello');
+
+    // Interpolated
+    console.log('Hello I am a %s string!', 'Sh**t');
+
+    // Styled
+    // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+
+    // warning!
+    console.warn('OH NOOO');
+
+    // Error :|
+    console.error('oh Sh**t!');
+
+    // Info
+    console.info('Crocodiles eat 3-4 people per year :)');
+
+    // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    console.clear();
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+
+    // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    console.table(dogs);
+
   </script>
 </body>
-</html> 
+</html>
