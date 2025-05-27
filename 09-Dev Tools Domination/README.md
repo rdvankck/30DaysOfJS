@@ -10,7 +10,7 @@ This exercise demonstrates various console methods and debugging techniques in J
 console.log('hello');
 
 // Interpolated strings
-console.log('Hello I am a %s string!', '💩');
+console.log('Hello I am a %s string!', 'Sh**t');
 
 // Styled console output
 console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue');
@@ -19,10 +19,10 @@ console.log('%c I am some great text', 'font-size:50px; background:red; text-sha
 console.warn('OH NOOO');
 
 // Error message
-console.error('Shit!');
+console.error('oh Sh**t!');
 
 // Information message
-console.info('Crocodiles eat 3-4 people per year');
+console.info('Crocodiles eat 3-4 people per year :)');
 ```
 
 ### Testing and Assertions
