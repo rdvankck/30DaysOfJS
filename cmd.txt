@@ -1,0 +1,38 @@
+# 1. Create the directory for Day 9
+mkdir -p "Day9-Dev Tools Domination"
+
+# 2. Download the index.html file from Wes Bos's repository
+curl -o "Day10 - Hold Shift and Check Checkboxes/index.html" https://github.com/wesbos/JavaScript30/blob/master/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/index-FINISHED.html
+
+# 3. Create the README.md file (using an editor like VS Code or vim)
+# I created a README.md file explaining the JavaScript concepts
+
+# 4. Check the current status of the repository
+git status
+
+# 5. Add the Day9 directory to staging (with --sparse option due to sparse checkout)
+git add --sparse Day9-Dev\ Tools\ Domination/
+
+# 6. Verify the files were staged correctly
+git status
+
+# 7. Commit the changes with a descriptive message
+git commit -m "Add Day 9: Dev Tools Domination"
+
+# 8. Try to push the changes (this was rejected)
+git push
+
+# 9. Try to pull the latest changes (this failed due to unfinished merge)
+git pull
+
+# 10. Check the status to see the merge issues
+git status
+
+# 11. Complete the merge by committing
+git commit -m "Merge remote changes"
+
+# 12. Push the changes after resolving the merge
+git push
+
+# 13. Verify the commits in the git history
+git log -2

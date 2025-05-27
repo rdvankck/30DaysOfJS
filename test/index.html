@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .renk-kutusu {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      transition: all 0.3s;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Change Challenge</h1>
+  
+  <div class="renk-kutusu" id="kutu"></div>
+  
+  <div>
+    <button id="kirmizi">Kırmızı</button>
+    <button id="mavi">Mavi</button>
+    <button id="yesil">Yeşil</button>
+    <button id="rastgele">Rastgele Renk</button>
+  </div>
+  
+  <p id="renk-kodu">Şu anki renk: #FFFFFF</p>
+  
+  <script>
+    // Burada JavaScript kodunu yazacaksınız
+    // 1. Tüm butonları seçin
+    const buttons = document.querySelectorAll('button');
+    // 2. Kutuyu seçin
+    const box = document.getElementById('kutu');
+    // 3. Renk kodu paragrafını seçin
+    const colorCode = document.getElementById('renk-kodu');
+    
+    // Renk ve renk kodu map'i
+    const colorMap = {
+      'kirmizi': 'red',
+      'mavi': 'blue',
+      'yesil': 'green'
+    };
+    
+    // Renk kodu güncelleme fonksiyonu
+    function updateColorCode() {
+      const currentColor = box.style.backgroundColor;
+      
+      // Renk adlarını hex kodlarına çevirme
+      const hexColors = {
+        'red': '#FF0000',
+        'blue': '#0000FF',
+        'green': '#008000'
+      };
+      
+      // Eğer hexColors nesnesinde varsa hex kodunu kullan, yoksa direkt olarak backgroundColor değerini kullan
+      const hexColor = hexColors[currentColor] || currentColor;
+      colorCode.textContent = `Şu anki renk: ${hexColor}`;
+    }
+    
+    // Rastgele renk oluşturma fonksiyonu
+    function rastgeleRenk() {
+      const rastgeleHex = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      box.style.backgroundColor = rastgeleHex;
+      colorCode.textContent = `Şu anki renk: ${rastgeleHex}`;
+    }
+    
+    // Her butona tıklandığında ilgili rengi uygulayın
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if(button.id === 'rastgele') {
+          rastgeleRenk();
+        } else {
+          // Renk map'inden renk değerini al
+          const renkDegeri = colorMap[button.id];
+          box.style.backgroundColor = renkDegeri;
+          colorCode.textContent = `Şu anki renk: ${renkDegeri}`;
+        }
+      });
+    });
+
+    buttons.forEach(button => {
+        button.addEventListener('click',() => {
+            if(button.id === 'rastgele'){
+                rastgeleRenk();
+            } else{ 
+                const renkDegeri = colorMap[button.id]
+                box.style.backgroundColor = renkDegeri;
+                colorCode.textContent = `Şu anki renk: ${renkDegeri}`;
+            }
+        });
+        })
+
+
+
+
+  </script>
+</body>
+</html> 
