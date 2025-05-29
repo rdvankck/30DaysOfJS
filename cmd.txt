@@ -94,23 +94,22 @@ git log -1
 # 1. Check the current video file
 cd /Users/ridvankocuk/Desktop/Temp/Ridvan.nosync/30DaysOfJS
 
-# 2. Download the correct video file
-curl -o "11-Custom Video Player/video.mp4" "https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"
-
-# 3. Update the index.html file to point to the correct video file
-# Changed <video class="player__video viewer" src="652333414.mp4"></video>
-# To <video class="player__video viewer" src="video.mp4"></video>
-
-# 4. Add the Custom Video Player directory to Git
+# 2. Add the Custom Video Player directory to Git
 git add "11-Custom Video Player"
 
-# 5. Commit the Custom Video Player project
+# 3. Commit the Custom Video Player project
 git commit -m "Add Custom Video Player project"
 
-# 6. Push the changes to GitHub
+# 4. Push the changes to GitHub
 git push origin main
 
-# 7. Update the README.md to include the Custom Video Player project
+# 5. Update the README.md to include the Custom Video Player project
 git add README.md
 git commit -m "Update README to include Custom Video Player project"
 git push origin main
+
+# 6. Create and add README.md for the Custom Video Player project
+git add "11-Custom Video Player/README.md"
+git commit -m "Add README for Custom Video Player project"
+git push origin main
+--------------------------------------****----------------------------------------------------------------------------****--------------------------------------
