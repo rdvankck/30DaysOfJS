@@ -36,11 +36,14 @@ git push
 
 # 13. Verify the commits in the git history
 git log -2
-
+--------------------------------------****----------------------------------------------------------------------------****--------------------------------------
 # Wes Bos JavaScript30 - Day 11 Setup Steps
 
 # 1. Create the directory for Day 11
 mkdir -p "11-Custom Video Player"
+
+#1.1# Download raw for the folder
+curl -L https://github.com/wesbos/JavaScript30/archive/refs/heads/master.zip -o JavaScript30.zip
 
 # 2. Download the HTML file from Wes Bos's repository
 curl -o "11-Custom Video Player/index.html" https://raw.githubusercontent.com/wesbos/JavaScript30/master/11%20-%20Custom%20Video%20Player/index.html
@@ -84,3 +87,30 @@ git push origin main
 
 # 14. Verify that your changes were pushed successfully
 git log -1
+--------------------------------------****----------------------------------------------------------------------------****--------------------------------------
+
+# Commands used to fix the Custom Video Player project
+
+# 1. Check the current video file
+cd /Users/ridvankocuk/Desktop/Temp/Ridvan.nosync/30DaysOfJS
+
+# 2. Download the correct video file
+curl -o "11-Custom Video Player/video.mp4" "https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"
+
+# 3. Update the index.html file to point to the correct video file
+# Changed <video class="player__video viewer" src="652333414.mp4"></video>
+# To <video class="player__video viewer" src="video.mp4"></video>
+
+# 4. Add the Custom Video Player directory to Git
+git add "11-Custom Video Player"
+
+# 5. Commit the Custom Video Player project
+git commit -m "Add Custom Video Player project"
+
+# 6. Push the changes to GitHub
+git push origin main
+
+# 7. Update the README.md to include the Custom Video Player project
+git add README.md
+git commit -m "Update README to include Custom Video Player project"
+git push origin main
