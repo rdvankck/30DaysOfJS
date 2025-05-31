@@ -107,9 +107,28 @@ git push origin main
 git add README.md
 git commit -m "Update README to include Custom Video Player project"
 git push origin main
+--------------------------------------****----------------------------------------------------------------------------****--------------------------------------
 
-# 6. Create and add README.md for the Custom Video Player project
-git add "11-Custom Video Player/README.md"
-git commit -m "Add README for Custom Video Player project"
+# Commands used to add Key Sequence Detection project (Day 12)
+
+# 1. Create the directory for Day 12
+mkdir -p "12-Key Sequence Detection"
+
+# 2. Download the HTML file from Wes Bos's repository
+curl -o "12-Key Sequence Detection/index.html" https://raw.githubusercontent.com/wesbos/JavaScript30/master/12%20-%20Key%20Sequence%20Detection/index-FINISHED.html
+
+# 3. Download the cornify.js file required for the project
+curl -o "12-Key Sequence Detection/cornify.js" https://raw.githubusercontent.com/wesbos/JavaScript30/master/12%20-%20Key%20Sequence%20Detection/cornify.js
+
+# 4. Create README.md with detailed explanation of the JavaScript concepts
+
+# 5. Add all files to Git and commit
+git add "12-Key Sequence Detection"
+git commit -m "Add Day 12: Key Sequence Detection"
+git push origin main
+
+# 6. Update the main README.md to include Day 12
+git add README.md
+git commit -m "Update README to include Key Sequence Detection project"
 git push origin main
 --------------------------------------****----------------------------------------------------------------------------****--------------------------------------
