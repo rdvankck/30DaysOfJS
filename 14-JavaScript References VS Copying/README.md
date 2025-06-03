@@ -1,58 +1,58 @@
-# JavaScript Referanslar VS Kopyalama
+# JavaScript References VS Copying
 
-Bu projede, JavaScript'te referanslar ve kopyalama arasındaki farkları öğreniyoruz.
+In this project, we learn about the differences between references and copying in JavaScript.
 
-## Öğrenilen Konular
+## Topics Covered
 
-### Primitive vs Reference Tipleri
-- **Primitive (İlkel) Tipler**: String, Number, Boolean, null, undefined, Symbol
-  - Bu tipler değer olarak kopyalanır
-  - Bir değişkeni diğerine atadığınızda, değerin kendisi kopyalanır
+### Primitive vs Reference Types
+- **Primitive Types**: String, Number, Boolean, null, undefined, Symbol
+  - These types are copied by value
+  - When you assign a variable to another, the value itself is copied
 
-- **Reference (Referans) Tipleri**: Array, Object, Function
-  - Bu tipler referans olarak kopyalanır
-  - Bir değişkeni diğerine atadığınızda, bellek adresine referans kopyalanır
+- **Reference Types**: Array, Object, Function
+  - These types are copied by reference
+  - When you assign a variable to another, the reference to the memory address is copied
 
-### Dizileri Kopyalama Yöntemleri
-1. `Array.prototype.slice()` kullanımı
+### Methods to Copy Arrays
+1. Using `Array.prototype.slice()`
    ```javascript
    const array2 = array1.slice();
    ```
 
-2. `[].concat()` kullanımı
+2. Using `[].concat()`
    ```javascript
    const array2 = [].concat(array1);
    ```
 
-3. ES6 Spread operatörü
+3. ES6 Spread operator
    ```javascript
    const array2 = [...array1];
    ```
 
-4. `Array.from()` kullanımı
+4. Using `Array.from()`
    ```javascript
    const array2 = Array.from(array1);
    ```
 
-### Nesneleri Kopyalama Yöntemleri
-1. `Object.assign()` kullanımı
+### Methods to Copy Objects
+1. Using `Object.assign()`
    ```javascript
    const obj2 = Object.assign({}, obj1);
    ```
 
-2. ES6 Spread operatörü
+2. ES6 Spread operator
    ```javascript
    const obj2 = {...obj1};
    ```
 
-### Önemli Notlar
-- Yukarıdaki yöntemler **sığ kopyalama** (shallow copy) yapar
-- İç içe diziler veya nesneler olduğunda, iç nesneler hala referans olarak kopyalanır
-- Derin kopyalama (deep copy) için:
+### Important Notes
+- The methods above perform **shallow copying**
+- When there are nested arrays or objects, the inner objects are still copied by reference
+- For deep copying:
   ```javascript
   const obj2 = JSON.parse(JSON.stringify(obj1));
   ```
-  Bu yöntem performans sorunlarına neden olabilir ve Date, Function gibi özel tipleri düzgün kopyalayamaz.
+  This method can cause performance issues and doesn't properly copy special types like Date or Function.
 
-## Pratik Kullanım
-Referans ve kopyalama arasındaki farkı anlamak, özellikle diziler ve nesnelerle çalışırken beklenmeyen yan etkileri önlemek için çok önemlidir. Bu bilgi, veri manipülasyonu yapılan her JavaScript projesinde kritik öneme sahiptir. 
+## Practical Use
+Understanding the difference between references and copying is crucial for preventing unexpected side effects, especially when working with arrays and objects. This knowledge is critical in any JavaScript project that involves data manipulation. 
