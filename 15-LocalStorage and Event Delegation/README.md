@@ -1,65 +1,65 @@
-# LocalStorage ve Event Delegation (Yerel Depolama ve Olay Delegasyonu)
+# LocalStorage and Event Delegation
 
-Bu projede, tarayıcının LocalStorage API'sini kullanarak verileri kalıcı olarak saklama ve Event Delegation (Olay Delegasyonu) tekniğiyle dinamik olarak oluşturulan öğeleri yönetme konularını öğreniyoruz.
+In this project, we learn how to persistently store data using the browser's LocalStorage API and how to manage dynamically created elements with the Event Delegation technique.
 
-## Öğrenilen Konular
+## Topics Covered
 
 ### LocalStorage API
 
-LocalStorage, web tarayıcılarında kullanıcı verilerini kalıcı olarak saklamak için kullanılan bir Web API'sidir.
+LocalStorage is a Web API used to persistently store user data in web browsers.
 
-- **Veri Saklama**: `localStorage.setItem(key, value)`
-- **Veri Alma**: `localStorage.getItem(key)`
-- **Veri Silme**: `localStorage.removeItem(key)`
-- **Tüm Verileri Silme**: `localStorage.clear()`
+- **Storing Data**: `localStorage.setItem(key, value)`
+- **Retrieving Data**: `localStorage.getItem(key)`
+- **Removing Data**: `localStorage.removeItem(key)`
+- **Clearing All Data**: `localStorage.clear()`
 
-LocalStorage'da sadece string değerler saklanabilir. Bu nedenle, nesneleri veya dizileri saklamak için JSON formatına dönüştürmek gerekir:
+LocalStorage can only store string values. Therefore, objects or arrays need to be converted to JSON format:
 
 ```javascript
-// Nesne veya dizi saklama
+// Storing objects or arrays
 localStorage.setItem('items', JSON.stringify(items));
 
-// Nesne veya dizi alma
+// Retrieving objects or arrays
 const items = JSON.parse(localStorage.getItem('items')) || [];
 ```
 
-### Event Delegation (Olay Delegasyonu)
+### Event Delegation
 
-Event Delegation, dinamik olarak oluşturulan veya değiştirilen öğeler için olay dinleyicilerini yönetmenin etkili bir yoludur.
+Event Delegation is an effective way to manage event listeners for dynamically created or modified elements.
 
-- Temel fikir: Olay dinleyicileri her bir öğeye değil, bunların ortak bir üst öğesine eklenir
-- Olaylar, DOM ağacında yukarı doğru "kabarcıklanır" (bubbling)
-- Olay hedefini kontrol ederek hangi alt öğenin olayı tetiklediğini belirleyebiliriz
+- Basic concept: Event listeners are attached to a common parent element rather than to each individual element
+- Events "bubble up" through the DOM tree
+- We can determine which child element triggered the event by checking the event target
 
 ```javascript
-// Event delegation örneği
+// Event delegation example
 parentElement.addEventListener('click', function(event) {
   if (event.target.matches('selector')) {
-    // İşlemi gerçekleştir
+    // Perform action
   }
 });
 ```
 
-## Projede Kullanılan Teknikler
+## Techniques Used in the Project
 
-1. **Form Gönderimini İşleme**:
-   - `submit` olayını dinleme
-   - `preventDefault()` ile varsayılan davranışı engelleme
-   - Form verilerini alma ve depolama
+1. **Handling Form Submission**:
+   - Listening for the `submit` event
+   - Preventing default behavior with `preventDefault()`
+   - Capturing and storing form data
 
-2. **Dinamik Liste Oluşturma**:
-   - `map()` ve `join()` kullanarak HTML oluşturma
-   - Template literals ile şablon oluşturma
+2. **Creating Dynamic Lists**:
+   - Using `map()` and `join()` to generate HTML
+   - Creating templates with template literals
 
-3. **Checkbox Durumunu Güncelleme**:
-   - Event delegation ile checkbox tıklamalarını yakalama
-   - `data-*` özniteliklerini kullanma
-   - LocalStorage'da veri güncelleme
+3. **Updating Checkbox Status**:
+   - Capturing checkbox clicks with event delegation
+   - Using `data-*` attributes
+   - Updating data in LocalStorage
 
-4. **LocalStorage ile Veri Kalıcılığı**:
-   - Sayfa yenilendiğinde bile verileri koruma
-   - JSON formatında nesneleri saklama ve geri alma
+4. **Data Persistence with LocalStorage**:
+   - Preserving data even when the page is refreshed
+   - Storing and retrieving objects in JSON format
 
-## Pratik Kullanım
+## Practical Applications
 
-Bu teknikler, kullanıcı tercihlerini saklama, form verilerini geçici olarak kaydetme ve dinamik içerikli web uygulamaları oluşturma gibi birçok senaryoda kullanılabilir. 
+These techniques can be used in many scenarios such as storing user preferences, temporarily saving form data, and creating web applications with dynamic content. 
