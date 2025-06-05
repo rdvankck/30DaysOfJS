@@ -60,6 +60,108 @@ parentElement.addEventListener('click', function(event) {
    - Preserving data even when the page is refreshed
    - Storing and retrieving objects in JSON format
 
+## JavaScript Code Explanation
+
+### Initializing the Application
+
+```javascript
+const addItems = document.querySelector('.add-items');
+const itemsList = document.querySelector('.plates');
+const items = JSON.parse(localStorage.getItem('items')) || [];
+```
+
+This code:
+- Selects the form element with class `.add-items`
+- Selects the list element with class `.plates`
+- Retrieves previously stored items from LocalStorage or initializes an empty array
+
+### Adding New Items
+
+```javascript
+function addItem(e) {
+  e.preventDefault();
+  const text = (this.querySelector('[name=item]')).value;
+  const item = {
+    text,
+    done: false
+  };
+
+  items.push(item);
+  populateList(items, itemsList);
+  localStorage.setItem('items', JSON.stringify(items));
+  this.reset();
+}
+```
+
+This function:
+- Prevents the default form submission behavior
+- Gets the text from the input field
+- Creates a new item object with the text and a `done` property set to false
+- Adds the item to the items array
+- Updates the displayed list
+- Saves the updated items array to LocalStorage
+- Resets the form
+
+### Displaying Items
+
+```javascript
+function populateList(plates = [], platesList) {
+  platesList.innerHTML = plates.map((plate, i) => {
+    return `
+      <li>
+        <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+        <label for="item${i}">${plate.text}</label>
+      </li>
+    `;
+  }).join('');
+}
+```
+
+This function:
+- Takes an array of items and a DOM element to populate
+- Uses array.map() to create HTML for each item
+- Creates a checkbox for each item, with its checked state based on the item's `done` property
+- Creates a label with the item's text
+- Uses join('') to convert the array of HTML strings into a single string
+- Sets the innerHTML of the list element
+
+### Toggling Item Status
+
+```javascript
+function toggleDone(e) {
+  if (!e.target.matches('input')) return; // skip this unless it's an input
+  const el = e.target;
+  const index = el.dataset.index;
+  items[index].done = !items[index].done;
+  localStorage.setItem('items', JSON.stringify(items));
+  populateList(items, itemsList);
+}
+```
+
+This function:
+- Checks if the clicked element is an input (checkbox)
+- Gets the index of the clicked item from the data-index attribute
+- Toggles the done status of the corresponding item
+- Updates the items in LocalStorage
+- Re-renders the list to reflect the changes
+
+### Setting Up Event Listeners
+
+```javascript
+addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
+populateList(items, itemsList);
+```
+
+This code:
+- Adds a submit event listener to the form
+- Uses event delegation by adding a click event listener to the list element
+- Initially populates the list with any existing items
+
 ## Practical Applications
 
-These techniques can be used in many scenarios such as storing user preferences, temporarily saving form data, and creating web applications with dynamic content. 
+These techniques can be used in many scenarios such as storing user preferences, temporarily saving form data, and creating web applications with dynamic content.
+
+## Reference
+
+This project is part of the JavaScript30 challenge by Wes Bos. You can find the original course at [https://JavaScript30.com](https://JavaScript30.com) 
