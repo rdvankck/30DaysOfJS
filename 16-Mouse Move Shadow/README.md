@@ -1,46 +1,46 @@
 # Mouse Move Shadow
 
-Bu proje, fare hareketlerine göre metin gölgelerini dinamik olarak değiştiren bir web uygulamasıdır. JavaScript'in DOM manipülasyonu ve fare olaylarını (mouse events) kullanarak interaktif bir deneyim sunar.
+This project is a web application that dynamically changes text shadows based on mouse movements. It provides an interactive experience using JavaScript's DOM manipulation and mouse events.
 
-## Proje Özellikleri
+## Project Features
 
-- Fare hareketine bağlı olarak dinamik metin gölgeleri
-- Çoklu renkli gölge efektleri
-- Fare konumuna göre hesaplanan gölge mesafeleri
-- Düzenlenebilir metin içeriği (contenteditable)
+- Dynamic text shadows based on mouse movement
+- Multi-colored shadow effects
+- Shadow distances calculated based on mouse position
+- Editable text content (contenteditable)
 
-## JavaScript Özellikleri
+## JavaScript Features
 
-### Olay Dinleyicileri (Event Listeners)
+### Event Listeners
 ```javascript
 hero.addEventListener('mousemove', shadow);
 ```
 
-### DOM Manipülasyonu
+### DOM Manipulation
 ```javascript
 const hero = document.querySelector('.hero');
 const text = hero.querySelector('h1');
 ```
 
-### Fare Pozisyonu Hesaplamaları
+### Mouse Position Calculations
 ```javascript
-// Fare pozisyonunu almak
+// Get mouse position
 let { offsetX: x, offsetY: y } = e;
 
-// İç içe elementlerde doğru pozisyonu hesaplamak
+// Calculate correct position for nested elements
 if (this !== e.target) {
   x = x + e.target.offsetLeft;
   y = y + e.target.offsetTop;
 }
 ```
 
-### Gölge Efektleri
+### Shadow Effects
 ```javascript
-// Gölge mesafesini hesaplamak
+// Calculate shadow distance
 const xWalk = Math.round((x / width * walk) - (walk / 2));
 const yWalk = Math.round((y / height * walk) - (walk / 2));
 
-// Çoklu renkli gölgeler oluşturmak
+// Create multi-colored shadows
 text.style.textShadow = `
   ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
   ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
@@ -49,19 +49,19 @@ text.style.textShadow = `
 `;
 ```
 
-## Öğrenilen Kavramlar
+## Concepts Learned
 
-1. **Mouse Events**: `mousemove` olayı ve fare pozisyonunu yakalama
-2. **Destructuring**: JavaScript'te nesne özelliklerini destructuring ile almak
-3. **offsetX/offsetY**: Fare pozisyonunu element içinde belirleme
-4. **textShadow**: CSS text-shadow özelliğini JavaScript ile dinamik olarak değiştirme
-5. **Math.round()**: Ondalık sayıları yuvarlama
-6. **Template Literals**: Çoklu satır string'leri oluşturma
+1. **Mouse Events**: Using `mousemove` event and capturing mouse position
+2. **Destructuring**: Getting object properties through destructuring in JavaScript
+3. **offsetX/offsetY**: Determining mouse position within an element
+4. **textShadow**: Dynamically changing CSS text-shadow property with JavaScript
+5. **Math.round()**: Rounding decimal numbers
+6. **Template Literals**: Creating multi-line strings
 
-## Uygulama
+## Applications
 
-Bu teknik, web sitelerinde interaktif başlıklar, banner'lar veya vurgu yapmak istediğiniz metinler için kullanılabilir. Kullanıcı deneyimini zenginleştiren bu tür efektler, sayfanızın daha dikkat çekici olmasını sağlar.
+This technique can be used for interactive headings, banners, or text elements you want to emphasize on websites. Such effects enhance the user experience and make your page more engaging.
 
 ---
 
-Bu proje, [Wes Bos](https://twitter.com/wesbos) tarafından oluşturulan [JavaScript30](https://javascript30.com/) eğitim serisinin bir parçasıdır. 
+This project is part of the [JavaScript30](https://javascript30.com/) tutorial series created by [Wes Bos](https://twitter.com/wesbos). 
