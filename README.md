@@ -21,6 +21,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 13 | [Slide in on Scroll](./13-Slide%20in%20on%20Scroll) | Images slide into view as you scroll down the page |
 | 14 | [14-JavaScript References VS Copying](./14-JavaScript%20References%20VS%20Copying) |  |
 | 15 | [15-LocalStorage and Event Delegation](./15-LocalStorage%20and%20Event%20Delegation) |  |
+| 16 | [16-Mouse Move Shadow](./16-Mouse%20Move%20Shadow) |  |
 ## Goals
 
 - Improve my JavaScript skills
