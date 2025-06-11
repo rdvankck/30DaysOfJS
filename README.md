@@ -19,7 +19,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 11 | [Custom Video Player](./11-Custom%20Video%20Player) | A custom HTML5 video player with custom controls and styling |
 | 12 | [Key Sequence Detection](./12-Key%20Sequence%20Detection) | "Konami Code" style secret key sequence detection |
 | 13 | [Slide in on Scroll](./13-Slide%20in%20on%20Scroll) | Images slide into view as you scroll down the page |
-| 14 | [14-JavaScript References VS Copying](./14-JavaScript%20References%20VS%20Copying) |  |
+| 14 | [14-JavaScript References VS Copying](./14-JavaScript%20References%20VS%20Copying) | Differences between references and copying in JavaScript. |
 | 15 | [15-LocalStorage and Event Delegation](./15-LocalStorage%20and%20Event%20Delegation) |  |
 | 16 | [16-Mouse Move Shadow](./16-Mouse%20Move%20Shadow) |  |
 ## Goals
