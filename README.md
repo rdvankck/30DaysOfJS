@@ -22,6 +22,8 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 14 | [14-JavaScript References VS Copying](./14-JavaScript%20References%20VS%20Copying) | Differences between references and copying in JavaScript. |
 | 15 | [15-LocalStorage and Event Delegation](./15-LocalStorage%20and%20Event%20Delegation) | LocalStorage API for data persistence & Event Delegation for managing dynamic elements. |
 | 16 | [16-Mouse Move Shadow](./16-Mouse%20Move%20Shadow) | JavaScript's DOM manipulation and mouse events. |
+| 17 | [17-Sort Without Articles](./17-Sort%20Without%20Articles) | This project effectively demonstrates how to manipulate and sort arrays in JavaScript |
+| 18 | [18-Adding Up Times with Reduce](./18%20-%20Adding%20Up%20Times%20with%20Reduce) | Select-Map-Calculate times  |
 ## Goals
 
 - Improve my JavaScript skills
