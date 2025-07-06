@@ -14,7 +14,7 @@ $(document).keypress(function () {
 
 
 
-// --- TIKLAMA YÖNETİCİSİ ---
+// --- CLICK MANAGEMENT
 
 $(".btn").click(function () {
 
@@ -29,7 +29,7 @@ $(".btn").click(function () {
 
 
 
-// --- ANA OYUN FONKSİYONLARI ---
+// --- MAIN GAME FUNTION
 
 function nextSequence() {
     userClickedPattern = [];
