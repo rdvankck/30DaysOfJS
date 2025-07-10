@@ -10,11 +10,11 @@
   let infoWindow;
   /* Pub Data from publist.html */
   const pubData = [{
-    outlet_local_id:1057,outlet_name:"The Foley",outlet_address_street_1:"106 Hare Ln",outlet_address_city:"Claygate",outlet_address_postalcode:"KT10 0LZ",outlet_address_location_lat:51.3597868,outlet_address_location_lon:-.3450963,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"Young's Pubs"}
+    outlet_local_id:1057,outlet_name:"The FX",outlet_address_street_1:"106 Hare Ln",outlet_address_city:"Claygate",outlet_address_postalcode:"XX 0LZ",outlet_address_location_lat:51.3597868,outlet_address_location_lon:-.3450963,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"xx"}
                    ,{
-                     outlet_local_id:1332,outlet_name:"Teller's Arms",outlet_address_street_1:"75 Castle St",outlet_address_city:"Farnham",outlet_address_postalcode:"GU9 7LP",outlet_address_location_lat:51.2153745,outlet_address_location_lon:-.7990535,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"Young's Pubs"}
+                     outlet_local_id:1332,outlet_name:"Teller's AX",outlet_address_street_1:"75 Castle St",outlet_address_city:"Farnham",outlet_address_postalcode:"GU9 XX",outlet_address_location_lat:51.2153745,outlet_address_location_lon:-.7990535,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"xx"}
                    ,{
-                     outlet_local_id:1363,outlet_name:"Tattenham Corner",outlet_address_street_1:"Tattenham Crescent",outlet_address_city:"Epsom",outlet_address_postalcode:"KT18 5NY",outlet_address_location_lat:51.3099229,outlet_address_location_lon:-.2438481,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"Young's Pubs"}
+                     outlet_local_id:1363,outlet_name:"Tattenham CX",outlet_address_street_1:"Tattenham Crescent",outlet_address_city:"Epsom",outlet_address_postalcode:"XX 5NY",outlet_address_location_lat:51.3099229,outlet_address_location_lon:-.2438481,outlet_address_country_name:"England",outlet_address_country_id:"GB",outlet_channel:"On trade",outlet_categories:"Managed",outlet_type:"Pub",outlet_group:"xx"}
                   ];
   function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371;
@@ -260,5 +260,5 @@ ${pub.outlet_address_city}
   };
 </script>
 <!-- Load Google Maps API with Places library -->
-<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSzDA6LCEpatRQd6wY-jwwnKTpD3xjLVo&amp;libraries=places&amp;callback=initMap">
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=XXX&amp;libraries=places&amp;callback=initMap">
 </script>
