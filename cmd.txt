@@ -154,4 +154,4 @@ git commit -m "Update README to include Slide in on Scroll project"
 git push origin main
 
 
-//////**  while true; do cliclick c:.; sleep 30; done    **/////
+//////**  while true; do cliclick c:.; sleep 60; done    **/////
