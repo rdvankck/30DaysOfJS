@@ -89,26 +89,6 @@ git push origin main
 git log -1
 --------------------------------------****----------------------------------------------------------------------------****--------------------------------------
 
-# Commands used to fix the Custom Video Player project
-
-# 1. Check the current video file
-cd /Users/ridvankocuk/Desktop/Temp/Ridvan.nosync/30DaysOfJS
-
-# 2. Add the Custom Video Player directory to Git
-git add "11-Custom Video Player"
-
-# 3. Commit the Custom Video Player project
-git commit -m "Add Custom Video Player project"
-
-# 4. Push the changes to GitHub
-git push origin main
-
-# 5. Update the README.md to include the Custom Video Player project
-git add README.md
-git commit -m "Update README to include Custom Video Player project"
-git push origin main
---------------------------------------****----------------------------------------------------------------------------****--------------------------------------
-
 # Commands used to add Key Sequence Detection project (Day 12)
 
 # 1. Create the directory for Day 12
@@ -132,26 +112,5 @@ git add README.md
 git commit -m "Update README to include Key Sequence Detection project"
 git push origin main
 --------------------------------------****----------------------------------------------------------------------------****--------------------------------------
-
-# Commands used to add Slide in on Scroll project (Day 13)
-
-# 1. Create the directory for Day 13
-mkdir -p "13-Slide in on Scroll"
-
-# 2. Download the HTML file from Wes Bos's repository
-curl -o "13-Slide in on Scroll/index.html" https://raw.githubusercontent.com/wesbos/JavaScript30/master/13%20-%20Slide%20in%20on%20Scroll/index-FINISHED.html
-
-# 3. Create README.md with detailed explanation of the JavaScript concepts
-
-# 4. Add all files to Git and commit
-git add "13-Slide in on Scroll"
-git commit -m "Day 13: Slide in on Scroll"
-git push origin main
-
-# 5. Update the main README.md to include Day 13
-git add README.md
-git commit -m "Update README to include Slide in on Scroll project"
-git push origin main
-
 
 //////**  while true; do cliclick c:.; sleep 60; done    **/////
