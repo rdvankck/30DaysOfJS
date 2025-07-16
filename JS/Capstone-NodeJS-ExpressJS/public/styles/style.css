@@ -1,0 +1,179 @@
+:root{
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;     
+    --background-color: #ecf0f1; 
+    --text-color: #34495e; 
+    --white-color: #ffffff;
+    --border-color: #bdc3c7;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+main, header, footer {
+  width: 100%;
+  max-width: 960px; /* Limits content width on large screens */
+  margin: 0 auto; /* Centers the content */
+  padding: 0 20px; /* Adds space on the sides */
+}
+header {
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* 3. Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9; /* A darker blue */
+}
+
+
+/* 4. Posts Section */
+.posts-container {
+  padding: 40px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.posts-container h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.posts-grid p {
+  text-align: center;
+  color: #7f8c8d; /* A muted grey */
+}
+
+
+/* 5. Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+/* 6. Form Styles */
+.form-container {
+  background-color: var(--white-color);
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group > div {
+  margin-left:15px;
+}
+
+/* 7. Post Card Styles */
+.post-card {
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.post-card h3 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+/* 8. Post Actions Styles */
+.post-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.button-delete {
+  background-color: #e74c3c; /* A red color */
+  color: var(--white-color);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-delete:hover {
+  background-color: #c0392b; /* A darker red */
+}
