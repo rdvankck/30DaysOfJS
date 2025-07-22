@@ -1,25 +1,151 @@
-<!-- Step 3 Add Header -->
+<%- include('partials/header.ejs') %>
 
-<%- include("partials/header.ejs") %>
+    <main class="container-fluid px-0">
+        <!-- Hero Section with Gradient Background -->
+        <section class="hero-gradient text-white text-center py-5 mb-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-2 fw-bold mb-4 text-shadow">A Window to the Past</h1>
+                        <p class="lead fs-4 mb-5 opacity-90">Welcome to my journal. Here, I share my thoughts and experiences through beautifully crafted stories.</p>
+                        <div class="hero-buttons">
+                            <a href="#posts" class="btn btn-light btn-lg me-3 px-4 py-3 rounded-pill shadow-sm">
+                                <i class="bi bi-arrow-down-circle me-2"></i>
+                                Explore Posts
+                            </a>
+                            <a href="/new" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+                                <i class="bi bi-plus-circle me-2"></i>
+                                Create Post
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Step 2 - If an adjective and noun are sent to this ejs file, 
-    Change the h1 to show the adjective and noun.
-    But when the user first goes on the website and there is no adjective and noun, 
-    Show the default h1 below -->
+        <div class="container my-5">
 
-  <% if(locals.adj && locals.noun) { %>
+            <section id="posts" class="post-container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Latest Posts</h2>
+                    <div class="d-inline-block">
+                        <div class="border-bottom border-primary border-3 pb-2">
+                            <i class="bi bi-collection text-primary fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                    <% if (posts.length > 0) { %>                                                           
+                        <% posts.forEach(function(post, index) { %>
+                            <div class="col">
+                                <article class="card border-0 shadow-lg h-100 hover-lift" style="transition: transform 0.3s ease;">
+                                    <div class="card-header bg-transparent border-0 pt-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar bg-gradient rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                                <i class="bi bi-person-fill text-white fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">Journal Entry</h6>
+                                                <small class="text-muted">Entry #<%= index + 1 %></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-2">
+                                        <h3 class="card-title h4 mb-3" style="color: #667eea;"><%= post.title %></h3>
+                                        <p class="card-text text-muted lh-base"><%= post.content %></p>
+                                        <div class="d-flex align-items-center mt-3">
+                                            <span class="badge bg-light text-dark me-2">
+                                                <i class="bi bi-clock me-1"></i>
+                                                Recent
+                                            </span>
+                                            <span class="badge bg-light text-dark">
+                                                <i class="bi bi-eye me-1"></i>
+                                                Public
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <button class="btn btn-sm btn-outline-primary me-2" disabled>
+                                                <i class="bi bi-heart me-1"></i>
+                                                Like
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary" disabled>
+                                                <i class="bi bi-share me-1"></i>
+                                                Share
+                                            </button>
+                                        </div>
+                                        <form action="/delete/<%= post.id %>" method="POST" class="d-inline">
+                                            <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure you want to delete this post?')">
+                                                <i class="bi bi-trash me-1"></i>
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </article>
+                            </div>
+                        <% }); %>                        
+                    <% } else { %>
+                        <div class="col-12">
+                            <div class="text-center py-5">
+                                <div class="mb-4">
+                                    <i class="bi bi-journal-plus display-1 text-muted"></i>
+                                </div>
+                                <h4 class="text-muted mb-3">No posts yet</h4>
+                                <p class="text-muted mb-4">Start your journaling journey by creating your first post!</p>
+                                <a href="/new" class="btn btn-primary btn-lg px-4 py-3 rounded-pill">
+                                    <i class="bi bi-plus-circle me-2"></i>
+                                    Create First Post
+                                </a>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </section>
+        </div>
+    </main>
 
-    <h1>
-      <%= adj %>
-        <%= noun %>
-    </h1>
-    <% } else { %>
-      <p>Click below</p>
-      <% } %>
-        <form action="/submit" method="POST">
-          <input type="submit" value="Generate Name">
-        </form>
+    <style>
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        
+        .avatar {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card {
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .btn-outline-primary:hover,
+        .btn-outline-secondary:hover,
+        .btn-outline-danger:hover {
+            transform: translateY(-1px);
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+    </style>
 
-
-        <!-- Step 3 Add Footer -->
-        <%- include("partials/footer.ejs") %>
+<%- include('partials/footer.ejs') %>

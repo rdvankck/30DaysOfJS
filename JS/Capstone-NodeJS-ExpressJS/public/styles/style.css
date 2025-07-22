@@ -177,3 +177,77 @@ footer {
 .button-delete:hover {
   background-color: #c0392b; /* A darker red */
 }
+
+/* Thank You Page Styles */
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #005f4b, #003d2e);
+    color: #ffffff;
+    padding: 40px;
+}
+
+.thank-you-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #d4a017; /* Jameson Gold */
+}
+
+.thank-you-container .copy {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.social-media, .website-link {
+    text-align: center;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-media .icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-media .icons a {
+    color: #ffffff;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media .icons a:hover {
+    color: #d4a017; /* Jameson Gold */
+}
+
+.website-link .btn {
+    background-color: #d4a017; /* Jameson Gold */
+    color: #003d2e; /* Dark Green */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.website-link .btn:hover {
+    background-color: #ffffff;
+    color: #003d2e;
+}

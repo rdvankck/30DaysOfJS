@@ -1,9 +1,211 @@
-</main>
+    <!-- Clean Modern Footer -->
+    <footer class="mt-auto" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-top: 1px solid #e2e8f0;">
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-journal-bookmark-fill fs-2 me-3" style="color: #3b82f6;"></i>
+                        <div>
+                            <h5 class="mb-1 fw-bold" style="color: #1f2937;">My Journal</h5>
+                            <small class="text-muted">Share your story with the world</small>
+                        </div>
+                    </div>
+                    <p class="text-muted mb-3" style="font-size: 0.9rem; line-height: 1.6;">
+                        A beautiful platform for sharing your thoughts, experiences, and stories. 
+                        Start writing your journey today.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-semibold mb-3" style="color: #374151;">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="/" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-house me-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/new" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-pencil-square me-2"></i>Write Post
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#posts" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-collection me-2"></i>All Posts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-semibold mb-3" style="color: #374151;">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-question-circle me-2"></i>Help
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-shield-check me-2"></i>Privacy
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-muted hover-link">
+                                <i class="bi bi-file-text me-2"></i>Terms
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Connect -->
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-semibold mb-3" style="color: #374151;">Stay Connected</h6>
+                    <p class="text-muted mb-3" style="font-size: 0.9rem;">
+                        Follow us for updates and inspiration from our community of writers.
+                    </p>
+                    <div class="social-links d-flex gap-2 mb-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <hr class="my-4" style="border-color: #d1d5db;">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small class="text-muted">
+                        &copy; 2025 My Journal. All rights reserved. Made with 
+                        <i class="bi bi-heart-fill text-danger mx-1"></i> 
+                        using Bootstrap & Node.js
+                    </small>
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                    <small class="text-muted">
+                        <i class="bi bi-code-slash me-1"></i>
+                        Version 1.0.0
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<footer>
-  <!-- Step 4 - Add a dynamic year to the footer using JS. -->
-  <p>Copyright © <%= new Date().getFullYear() %>
-</footer>
+    <!-- Additional Styles -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .hover-link:hover {
+            color: #3b82f6 !important;
+            transition: color 0.2s ease;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom form focus states */
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        /* Button hover effects */
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+        
+        /* Loading animation for buttons */
+        .btn-primary:hover {
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Smooth scroll to posts section
+        document.addEventListener('DOMContentLoaded', function() {
+            const exploreBtn = document.querySelector('a[href="#posts"]');
+            if (exploreBtn) {
+                exploreBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#posts').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Add loading state to form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function() {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn && !submitBtn.textContent.includes('Delete')) {
+                        submitBtn.innerHTML = '<i class="bi bi-arrow-repeat spin me-2"></i>Publishing...';
+                        submitBtn.disabled = true;
+                    }
+                });
+            });
+            
+            // Character counter for content textarea
+            const contentTextarea = document.querySelector('#postContent');
+            if (contentTextarea) {
+                const counter = document.createElement('small');
+                counter.className = 'text-muted float-end mt-1';
+                contentTextarea.parentNode.appendChild(counter);
+                
+                function updateCounter() {
+                    const length = contentTextarea.value.length;
+                    counter.textContent = `${length} characters`;
+                    counter.style.color = length > 1000 ? '#28a745' : '#6c757d';
+                }
+                
+                contentTextarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+    </script>
+
 </body>
-
 </html>
