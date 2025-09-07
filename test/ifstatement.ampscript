@@ -1,0 +1,19 @@
+%%[
+SET @prefDashboardDE = 'RK_Test'
+SET @prefRows = LookUpOrderedRows(@prefDashboardDE, 0,
+                                     'CategoryOrder asc, NbContacts desc',
+                                     'toSelect', 1)
+SET @prefLength = RowCount(@prefRows)
+
+IF @prefLength > 0 THEN
+  VAR @previousCategory
+  FOR @i = 1 TO @prefLength DO
+    SET @row = Row(@prefRows, @i)
+    SET @category = Field(@row, 'Category')
+    SET @preference = Field(@row, 'Preference')
+    SET @nbContacts = Field(@row, 'NbContacts')
+    SET @rateContacts = Field(@row, 'RateContacts')
+    
+    IF @previousCategory != @category THEN
+      IF @i != 1 THEN
+]%%  
