@@ -27,7 +27,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 19 | [Webcam Fun](.19%20-%20Webcam) | Webcam Fun  |
 | 20 | [Speech Detection](./20%20-%20Speech%20Detection) | Speech Detection  |
 | 21 | [Geolocation](./20%20-%20Speech%20Detection) | Speech Detection  |
-| 22 | [](./20%20-%20Speech%20Detection) | Speech Detection  |
+| 22 | [Follow Along Link Highlighter](./20%20-%20Speech%20Detection) | Speech Detection  |
 ## Goals
 
 - Improve my JavaScript skills
