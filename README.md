@@ -30,7 +30,7 @@ This is my journey through 30 days of JavaScript coding challenges based on [Wes
 | 22 | [Follow Along Link Highlighter](./22%20-%20Follow%20Along%20Link%20Highlighter) | Dynamically highlights links when hover them  |
 | 23 | [Speech Synthesis](./23%20-%20Speech%20Synthesis) |  |
 | 24 | [Sticky Nav](./24%20-%20Sticky%20Nav) |   |
-| 25 | [Event Capture, Propagation, Bubbling and Once](./) |   |
+| 25 | [Event Capture, Propagation, Bubbling and Once](./25%20-%20Event%20Capture%2C%20Propagation%2C%20Bubbling%20and%20Once) |   |
 ## Goals
 
 - Improve my JavaScript skills
