@@ -113,4 +113,4 @@ git commit -m "Update README to include Key Sequence Detection project"
 git push origin main
 --------------------------------------****----------------------------------------------------------------------------****--------------------------------------
 
-//////**  while true; do cliclick c:.; sleep 60; done    **/////
+
